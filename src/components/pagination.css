@@ -1,0 +1,64 @@
+
+.pagination {
+    display : flex;
+    margin-top: 12px;
+    margin-left: 12px;
+    /* border: solid; */
+    align-items: center;
+    justify-content: center;
+}
+.pagination ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.pagination ul li {
+
+    background: #1990FF;
+    padding: 4px;
+    height: 30px;
+    width: 30px;
+    border-radius: 55px;
+    align-self: center;
+    text-align: center;
+    overflow: hidden;
+    
+}
+.pagination ul li:hover {
+    transform: scale(1.1);
+    transition: all ease .2s;
+    overflow: hidden;
+}
+
+
+.pagination ul li button {
+
+    background-color: #1990FF;
+    border: none;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+}
+.pagination button.active {
+    background-color:  #5cb0ffdf;
+    
+  }
+  
+
+.deleteButton {
+    background-color: #FF5071;
+    border: none;
+    border-radius: 12px;
+    height: 3vh;
+    width: 9vw;
+}
+
+.deleteButton:hover {
+    transform: scale(1.1);
+    transition: all ease .2s;
+}

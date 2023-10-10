@@ -1,0 +1,24 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 12px;
+  }
+
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+
+.icons button{
+  margin: 0 12px;
+  border: none;
+  background-color: transparent
+}
+
+.selected-row {
+  background-color: rgba(209, 181, 181, 0.171);
+}
