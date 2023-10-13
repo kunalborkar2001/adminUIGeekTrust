@@ -65,8 +65,8 @@ const Table = () => {
     setSelectAllChecked([]);
     setCurrentPage(newPage);
   };
-
-//To check all the rows this function is used
+  
+  //To check all the rows this function is used
   const CheckAllTheRows = () => {
     if (selectAllChecked.length === currentRows.length) {
       setSelectAllChecked([]);
@@ -77,7 +77,7 @@ const Table = () => {
       setSelectedRows(allRowIds);
     }
   };
-
+  
   //All the row checks are handeled here
   const handleRowCheck = (rowId) => {
     if (selectedRows.includes(rowId)) {
@@ -86,63 +86,64 @@ const Table = () => {
       setSelectedRows([...selectedRows, rowId]);
     }
   };
-
+  
   //To delete a single row on click on delete icon the row should get deleted 
   const deleteOneRow = (rowId) => {
     const updatedTableData = tableData.filter((row) => row.id !== rowId);
     setTableData(updatedTableData);
   };
-
+  
   
   //These two functions are handeling the edit part.
   const handleEdit = (id) => {
     setEditingRowId(id);
   };
-
+  
   const handleEditInputChange = (id, fieldName, value) => {
     const updatedTableData = tableData.map((row) =>
-      row.id === id ? { ...row, [fieldName]: value } : row
+    row.id === id ? { ...row, [fieldName]: value } : row
     );
     setTableData(updatedTableData);
   };
-
-
+  
+  
   const handleSaveEdit = (id) => {
     setEditingRowId(null); // Finish editing
-
+    
     // Find the edited row
     const editedRow = tableData.find((row) => row.id === id);
-
+    
     // Update the table data with the edited row
     const updatedTableData = tableData.map((row) =>
-      row.id === id ? editedRow : row
+    row.id === id ? editedRow : row
     );
-
+    
     setTableData(updatedTableData);
   };
-
+  
   //When we press X the edit will not be saved and previous saved will be restored
   const handleCancelEdit = (id) => {
     setEditingRowId(null); // Cancel editing
   };
-
-
+  
+  
   //All the selected rows will get deleted 
   const handleDeleteSelected = () => {
     const updatedTableData = tableData.filter(
       (row) => !selectedRows.includes(row.id)
-    );
-    setTableData(updatedTableData);
-
-    setSelectedRows([]);
-  };
-
-
-
-  //This function is handeling the search functionality
-  const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
-  };
+      );
+      setTableData(updatedTableData);
+      
+      setSelectedRows([]);
+    };
+    
+    
+    
+    //This function is handeling the search functionality
+    const handleSearch = (event) => {
+      setCurrentPage(1)
+      setSearchQuery(event.target.value);
+    };
 
 
 
